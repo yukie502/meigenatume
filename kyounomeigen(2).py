@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.font as font
+import customtkinter as ctk
 import random
 
 
@@ -46,10 +47,15 @@ def main():
     result = random.choice(meigen)
     label2.config(text=result)
 
+def setup_form(self):
+        # CustomTkinter のフォームデザイン設定
+        customtkinter.set_appearance_mode("dark")  # Modes: system (default), light, dark
+        customtkinter.set_default_color_theme("blue")  # Themes: blue (default), dark-blue, green
 
 
 
-root = tk.Tk()
+
+root = ctk.CTk()
 width   = 600   # 横幅
 height  = 400   # 高さ
 xPos    = 500   # X座標
@@ -65,14 +71,30 @@ root.iconphoto(False, photo)
 
 
 
-label1 = tk.Label(root,text="きょうの名言",background='#4169e1', fg='white', font=('arial', 15, 'bold'))
+label1 =customtkinter.CTkLabel(root,text="きょうの名言",background='#4169e1', fg='white', font=('arial', 12, 'bold'))
 label1.place(x=125,y=35)
 
-label2= tk.Label(root,text=" ", font=('arial', 12, 'bold'))
+label2= customtkinter.CTkLabel(root,text=" ", font=('arial', 12, 'bold'))
 label2.place(x=45, y=180)
 
-button = tk.Button(root, text="名言をみる",bg='blue', fg='white',command=main)
+button = customtkinter.CTkButton(root, text="名言をみる",bg='blue', fg='white',command=main)
 button.place(x=360,y=40)
 
 root.mainloop()
-# 名言をスクレイピングしてとれるようにしてはどうか
+
+
+
+
+
+ 
+
+    
+
+
+
+
+
+
+
+
+
